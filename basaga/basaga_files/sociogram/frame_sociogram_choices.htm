@@ -1,0 +1,113 @@
+<HTML>
+<HEAD>
+   <TITLE>Sociogram options</TITLE>
+<SCRIPT LANGUAGE=JavaScript><!--
+var showingQuestionPage = false
+function checkMatrix(){
+	if (!showingQuestionPage) return
+	showingQuestionPage = false
+	var temp = top.frames[2].document.workArea.matrix.value
+	// Reduce to 1, 0 and -.
+	var matrixText = ""
+	var test 
+	for (var i=0; i<temp.length; i++){
+		test = temp.charAt(i)
+		if ((test=="1")||(test=="0")||(test=="-")){
+			matrixText = matrixText + test
+		}
+	}
+	top.frames[0].document.Choices.matrixText.value = matrixText
+	// Count the names.
+	var numberOfNames = 0 // one below the name starting point
+	while (top.frames[1].document.namelist.elements[++numberOfNames].value!="") {}
+	numberOfNames = numberOfNames - 1
+	// Change 1s to relations
+	var actorName
+	var objectName
+	var relationsText = ""
+	for (var i=0; i<numberOfNames; i++){
+		actorName = top.frames[1].document.namelist.elements[i+1].value
+		var somethingInLine = false
+		for (var j=0; j<numberOfNames; j++){
+			objectName = top.frames[1].document.namelist.elements[j+1].value
+			if (i != j){
+				var answerAt = i*numberOfNames + j
+				if (answerAt<matrixText.length+20){
+					if(matrixText.charAt(answerAt)=="1"){
+						relationsText = relationsText + actorName + "-" + objectName + ", "
+						somethingInLine = true
+					}
+				}
+			}
+		}
+		if (somethingInLine) {relationsText = relationsText + " "}
+	}
+	document.Choices.relationsText.value = relationsText
+	top.frames[2].location='Sociogram.html'
+}
+// --></SCRIPT>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<P><FONT FACE="Arial"><TABLE BORDER=0 BGCOLOR="#003300">
+   <TR>
+      <TD>
+         <H1><CENTER><FONT FACE="Arial" COLOR="#FFFF33">Sociograms</FONT></CENTER></H1>
+         
+         <H3><CENTER><FONT FACE="Arial" COLOR="#FFFF33">Visualizing
+         Social Networks</FONT></CENTER></H3>
+      </TD>
+   </TR>
+</TABLE>
+ </FONT></CENTER></FONT></P>
+
+<P><FONT FACE="Arial"><FORM ACTION="--WEBBOT-SELF--" METHOD=POST name=Choices>
+   <P><FONT FACE="Arial">Enter your relational question:</FONT><BR>
+   <FONT FACE="Arial"><INPUT TYPE=text NAME=relationQuestion VALUE="Does X consult Y?" SIZE=25></FONT></P>
+   
+   <P><FONT FACE="Arial">Select the desired display:</FONT><BR>
+   <FONT FACE="Arial"><INPUT TYPE=radio NAME=radioChoice VALUE=doInstruct CHECKED onclick="checkMatrix();top.frames[2].location='frame_sociogram_intro.htm'">Instructions.<BR>
+   <INPUT TYPE=radio NAME=radioChoice VALUE=doQuestions onclick="showingQuestionPage = true; top.frames[2].location='frame_sociogram_question.htm'">Relational
+   questions.<BR>
+   <INPUT TYPE=radio NAME=radioChoice VALUE=doGraph onclick="checkMatrix()">Dyads
+   and Sociogram.<BR>
+   </FONT></P>
+   
+   <P><FONT FACE="Arial"><INPUT TYPE=hidden NAME=matrixText VALUE=
+   "-00100000010101010010
+0-0000010000000000000
+00-000000000000000000
+100-01000010001010010
+0000-0000100010001100
+00010-000010101010010
+000000-00100000000001
+0100000-0000000100100
+00000000-001000000000
+000010100-00000010000
+1001010000-0101010010
+00000000100-000010000
+100001000010-01000010
+0000100000000-0000000
+10010100001010-010010
+000000010000000-00100
+1001010001110010-0010
+00001000000000000-001
+000010010000000100-00
+1001010000101010100-0
+00000010000000000100-
+">
+   <INPUT TYPE=hidden NAME=relationsText VALUE="Does X consult Y?></FONT>
+      
+      </FORM></FONT></P>
+      
+      
+      
+      <P></P>
+      
+      </BODY>
+      
+      </HTML>
+      
+      "></FONT>
+</FORM></FONT></P>
+</BODY>
+</HTML>

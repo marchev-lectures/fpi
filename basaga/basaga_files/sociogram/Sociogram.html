@@ -1,0 +1,22 @@
+<HTML>
+<!--This file created 11:37 PM  11/21/2000 by Claris Home Page version 3.0-->
+<HEAD>
+   <TITLE>Sociogram</TITLE>
+   <META NAME=GENERATOR CONTENT="Claris Home Page 3.0">
+<SCRIPT LANGUAGE=JavaScript>function dataToGraph(){
+        document.grapher.setEdgesList(top.frames[0].document.Choices.relationsText.value)
+}</SCRIPT>
+</HEAD>
+<BODY onload="dataToGraph()">
+<P><APPLET CODEBASE="./"
+    CODE="sociogram.Sociogram.class"
+    NAME=grapher
+    WIDTH=1500
+    HEIGHT=1080
+    ALIGN=top
+    MAYSCRIPT>
+</APPLET></P>
+
+<P></P>
+</BODY>
+</HTML>

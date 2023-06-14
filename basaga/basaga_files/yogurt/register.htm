@@ -1,0 +1,47 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Регистър</title>
+<script language="JavaScript">
+<!--
+function FP_swapImg() {//v1.0
+ var doc=document,args=arguments,elm,n; doc.$imgSwaps=new Array(); for(n=2; n<args.length;
+ n+=2) { elm=FP_getObjectByID(args[n]); if(elm) { doc.$imgSwaps[doc.$imgSwaps.length]=elm;
+ elm.$src=elm.src; elm.src=args[n+1]; } }
+}
+
+function FP_preloadImgs() {//v1.0
+ var d=document,a=arguments; if(!d.FP_imgs) d.FP_imgs=new Array();
+ for(var i=0; i<a.length; i++) { d.FP_imgs[i]=new Image; d.FP_imgs[i].src=a[i]; }
+}
+
+function FP_getObjectByID(id,o) {//v1.0
+ var c,el,els,f,m,n; if(!o)o=document; if(o.getElementById) el=o.getElementById(id);
+ else if(o.layers) c=o.layers; else if(o.all) el=o.all[id]; if(el) return el;
+ if(o.id==id || o.name==id) return o; if(o.childNodes) c=o.childNodes; if(c)
+ for(n=0; n<c.length; n++) { el=FP_getObjectByID(id,c[n]); if(el) return el; }
+ f=o.forms; if(f) for(n=0; n<f.length; n++) { els=f[n].elements;
+ for(m=0; m<els.length; m++){ el=FP_getObjectByID(id,els[n]); if(el) return el; } }
+ return null;
+}
+// -->
+</script>
+</head>
+<body onload="FP_preloadImgs(/*url*/'images/button8.gif', /*url*/'images/button9.gif', /*url*/'images/buttonE.gif', /*url*/'images/buttonF.gif')">
+
+<p class="MsoNormal" style="margin-bottom:0cm;line-height:normal" align="left">
+<!--webbot bot="Navigation" S-Orientation="horizontal" S-Rendering="graphics" S-Theme="ice" S-Type="siblings" B-Include-Home="TRUE" B-Include-Up="FALSE" startspan --><a href="index.html"><img src="_derived/home_cmp_ice000_hbtn.gif" width="154" height="37" border="0" alt="Начало" align="middle"></a> <a href="instruct_bg.htm"><img src="_derived/instruct_bg.htm_cmp_ice000_hbtn.gif" width="154" height="37" border="0" alt="Правила" align="middle"></a> <a href="q_a.htm"><img src="_derived/q_a.htm_cmp_ice000_hbtn.gif" width="154" height="37" border="0" alt="Въпроси" align="middle"></a> <img src="_derived/register.htm_cmp_ice000_hbtn_p.gif" width="154" height="37" border="0" alt="Регистър" align="middle"> <a href="game.htm"><img src="_derived/game.htm_cmp_ice000_hbtn.gif" width="154" height="37" border="0" alt="Игра" align="middle"></a> <a href="gameplay.htm"><img src="_derived/gameplay.htm_cmp_ice000_hbtn.gif" width="154" height="37" border="0" alt="Табло" align="middle"></a> <a href="links.htm"><img src="_derived/links.htm_cmp_ice000_hbtn.gif" width="154" height="37" border="0" alt="Връзки" align="middle"></a> <a href="reports.htm"><img src="_derived/reports.htm_cmp_ice000_hbtn.gif" width="154" height="37" border="0" alt="Отчети" align="middle"></a><!--webbot bot="Navigation" i-checksum="17055" endspan --></p>
+<p class="MsoNormal" style="margin-bottom:0cm;line-height:normal" align="left">
+<!--<a href="https://forms.gle/zyupgYFiHeuWJefY7">
+<img border="0" id="img1" src="images/button7.gif" height="40" width="200" alt="РЕГИСТРИРАЦИЯ НА ИГРАЧ" fp-style="fp-btn: Embossed Capsule 1; fp-font-style: Bold; fp-transparent: 1" fp-title="РЕГИСТРИРАЦИЯ НА ИГРАЧ" onmouseover="FP_swapImg(1,0,/*id*/'img1',/*url*/'images/button8.gif')" onmouseout="FP_swapImg(0,0,/*id*/'img1',/*url*/'images/button7.gif')" onmousedown="FP_swapImg(1,0,/*id*/'img1',/*url*/'images/button9.gif')" onmouseup="FP_swapImg(0,0,/*id*/'img1',/*url*/'images/button8.gif')"></a>-->&nbsp;&nbsp;&nbsp;
+<a href="https://forms.gle/JpfX8nKph1sRQ3pH7">
+<img border="0" id="img2" src="images/buttonD.gif" height="40" width="200" alt="РЕГИСТРИРАЦИЯ НА ЕКИП" onmouseover="FP_swapImg(1,0,/*id*/'img2',/*url*/'images/buttonE.gif')" onmouseout="FP_swapImg(0,0,/*id*/'img2',/*url*/'images/buttonD.gif')" onmousedown="FP_swapImg(1,0,/*id*/'img2',/*url*/'images/buttonF.gif')" onmouseup="FP_swapImg(0,0,/*id*/'img2',/*url*/'images/buttonE.gif')" fp-style="fp-btn: Embossed Capsule 1; fp-font-style: Bold; fp-transparent: 1" fp-title="РЕГИСТРИРАЦИЯ НА ЕКИП"></a></p>
+<p>
+
+
+<iframe height=4000 width=1500 scrolling="no"  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT61MZkc8qWP5Z26JBr2VTlbftYYSELW-ZoSmf80xLa-Qfy-gTuhNTJESNrVqNSOAp7CNDrLAjxGO76/pubhtml?gid=2116886487&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+</p>
+</body>
+
+</html>

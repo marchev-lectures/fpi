@@ -1,0 +1,45 @@
+<html lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>js-dos api</title>
+	<style type="text/css">.dosbox-container { width: 640px; height: 400px; }
+      .dosbox-container > .dosbox-overlay { background: url(stock-market.gif); }
+	</style>
+</head>
+<body>
+<div id="dosbox"></div>
+
+<p><br />
+<button onclick="dosbox.requestFullScreen();">Make fullscreen</button><script type="text/javascript" src="js-dos-api.js"></script><script type="text/javascript">
+      var dosbox = new Dosbox({
+        id: "dosbox",
+        onload: function (dosbox) {
+          dosbox.run("stock.zip", "./START.BAT");
+        }, 
+        onrun: function (dosbox, app) {
+          console.log("App '" + app + "' is runned");
+        }
+      });
+    </script></p>
+
+<p></p>
+
+<a href="https://youtu.be/s7NkNf3DeWQ"> Видео инструктаж</a>
+
+<p>Ако играете играта самостоятелно за наваксване на пропуснати точки от клас:</p>
+
+<p>1) Запознайте се с ръководството <a href="http://basaga.org/basaga_files/stock/2018-05-31-STOCK-MARKET-tabla.pdf">тук...</a>&nbsp;</p>
+
+<p>2) Стартирате играта и се регистрирате с име на играч - вашето име.</p>
+
+<p>3) Изигравате играта и сваляте скрийншот, от който да се вижда името на играча (т.е. вашето име) и резултатът ви към края на играта.&nbsp;Записвате файла със скрийншота във вид на изображение (jpg, gif, bmp, пр.) и наименовате файла във вид факултетен_номер_име_фамилия_игра на латиница. (Например: 15164032_ivan_ivanov_stock-market.jpg).</p>
+
+<p><img src="stock_market_screen.png" height=200></p>
+
+<p>4) Изпратете скрийншота, като попълните формуляра на следния линк:&nbsp;<a href="https://forms.gle/63zsHvia7sQBJGRP9">https://forms.gle/63zsHvia7sQBJGRP9</a>&nbsp;(ако пратите по някакъв друг начин, НЯМА ДА ВИ БЪДЕ ОТЧЕТЕН РЕЗУЛТАТ).</p>
+
+
+
+<p></p>
+<iframe height=1000 width=650 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRmAP3Md7W2BnbrOJ-SLQkKbPw9XwvokYCkhgCbUitxW_jxjXA1z98zjYcec0OizFF5UK9UbWJgXa6P/pubhtml?gid=173565512&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+</body>
+</html>

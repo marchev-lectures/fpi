@@ -1,0 +1,105 @@
+<HTML>
+<HEAD>
+<SCRIPT LANGUAGE=JavaScript><!--
+var pre, mid, last
+var numberOfNames=4
+var firstName = 1
+var currentActor = firstName
+var currentObject = firstName
+var numberOfNames
+var askingQuestions = false
+
+function askQuestions(thisform) {
+	var currentTable = top.frames[0].document.Choices.matrixText.value
+	document.workArea.matrix.value = ""
+	// Get number of people in group
+	numberOfNames = 0 // one below the name starting point
+	while (top.frames[1].document.namelist.elements[++numberOfNames].value!="") {}
+	numberOfNames = numberOfNames - 1
+	// Find place in questioning.
+	// Reduce table to 1, 0 and -.
+	var cleanedMatrixText = ""
+	var test 
+	var count = 0
+	for (var i=0; i<currentTable.length; i++){
+		test = currentTable.charAt(i)
+		if ((test=="1")||(test=="0")||(test=="-")){
+			cleanedMatrixText = cleanedMatrixText + test
+			document.workArea.matrix.value = document.workArea.matrix.value + test
+			count = count + 1
+			if  (count==numberOfNames) {
+				document.workArea.matrix.value = document.workArea.matrix.value + "\n"
+				count = 0
+			}
+		}
+	}
+	var total = cleanedMatrixText.length
+	currentActor = (total / numberOfNames) + 1
+	currentObject = total - (currentActor-1)*numberOfNames + 1
+	if ((currentActor==numberOfNames)&&(currentObject==1)){
+		askingQuestions = false
+	} else {
+		var questionFrame =  top.frames[0].document.Choices.relationQuestion.value
+		var indexX = questionFrame.indexOf("X")
+		var indexY = questionFrame.indexOf("Y")
+		if ((indexX<0)||(indexY<0)){return}
+		pre = questionFrame.substring(0,indexX)
+		mid = questionFrame.substring(indexX+1,indexY)
+		last = questionFrame.substring(indexY+1,questionFrame.length)
+		askingQuestions = true
+	}
+	presentQuestion()
+}
+function answeredQuestion(answer){
+	if (!askingQuestions){return}
+	document.workArea.matrix.value = document.workArea.matrix.value + answer
+	if (++currentObject==(numberOfNames+1)){
+		document.workArea.matrix.value = document.workArea.matrix.value + "\n"
+		currentObject = firstName
+		currentActor++
+	}
+	presentQuestion()
+}
+function presentQuestion(){
+	if (currentActor==(numberOfNames+1)){
+		askingQuestions=false
+		document.workArea.relationalQuestion.value = ""
+		return
+	}
+	if (currentActor==currentObject){
+		answeredQuestion("-")
+	}	
+	actorName = getName(currentActor)
+	objectName = getName(currentObject)
+	if (!askingQuestions){return}
+	document.workArea.relationalQuestion.value = pre + actorName + mid + objectName + last
+}
+
+function getName(position){
+	var theName = top.frames[1].document.namelist.elements[position].value
+	var index = theName.indexOf("*")
+	if (index>-1){theName = theName.substring(0,index)}
+	index = theName.indexOf("!")
+	if (index>-1){theName = theName.substring(0,index)}
+	return (theName)
+}
+// --></SCRIPT>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" onload="askQuestions(this.form)">
+<P><FONT FACE="Arial"><FORM ACTION="" METHOD=POST name=workArea>
+   <P>&nbsp;</P>
+   
+   <CENTER><FONT FACE="Arial"><INPUT TYPE=text NAME=relationalQuestion VALUE="" SIZE=45></FONT>
+   
+   <P><FONT FACE="Arial"><INPUT TYPE=button NAME=yes VALUE="Yes" onclick="answeredQuestion('1')">
+   <INPUT TYPE=button NAME=no VALUE="No" onclick="answeredQuestion('0')"></FONT></P></CENTER>
+   
+   <H5><CENTER><FONT FACE="Arial">Relational
+   Table:</FONT></CENTER></H5>
+   
+   <CENTER><FONT SIZE="-1" FACE="Courier New"><TEXTAREA NAME=matrix ROWS=21 COLS=21 WRAP=off></TEXTAREA></FONT>
+   
+   <P></FONT></CENTER>
+</FORM></FONT></P>
+</BODY>
+</HTML>

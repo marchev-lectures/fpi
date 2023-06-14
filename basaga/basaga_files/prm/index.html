@@ -1,0 +1,71 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>js-dos 6.22, PRM</title>
+  <script src="https://js-dos.com/6.22/current/js-dos.js"></script>
+  <style>
+    html, body, canvas, .dosbox-container {
+      width: 640px;
+      height: 400px;
+      margin: 10;
+      padding: 0;
+      overflow: visible;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="jsdos"></canvas>
+  
+  <button style="position: absolute; left: 1em; top: 420px;" onclick="ci.fullscreen()">Fullscreen</button>
+  <script>
+    Dos(document.getElementById("jsdos"), {
+        wdosboxUrl: "https://js-dos.com/6.22/current/wdosbox.js",
+        cycles: 1000,
+        autolock: false,
+    }).ready(function (fs, main) {
+      fs.extract("prm.zip").then(function () {
+        main(["-c", "PRM.EXE"]).then(function (ci) {
+            DosController.Qwerty(ci.getParentDiv(), ci.getKeyEventConsumer());
+//            DosController.Move(ci.getParentDiv(), ci.getKeyEventConsumer());
+            window.ci = ci;
+        });
+      });
+    });
+  </script>
+
+
+<p><a href="https://youtu.be/eSP_TurXyHk">Общи видео инструкции за PRM1</a></p>
+
+<p><a href="https://youtu.be/klVEjocqVPk">Допълнителни видео инструкции за PRM2</a></p>
+
+<p>Ако играете играта самостоятелно за наваксване на пропуснати точки от клас:</p>
+
+<p>1) Запознайте се с ръководството <a href="http://basaga.org/basaga_files/prm/2018-05-31PRM-rakovodstvo.pdf" target="_blank">тук...</a>&nbsp;</p>
+
+<p>2) Стартирате играта за съответното ниво&nbsp;и се регистрирате с име на играч - вашия факултетен номер.</p>
+
+<p>3) Изигравате играта и сваляте скрийншот, от който да се вижда името на играча (т.е. вашия факултетен номер) и резултатът ви към края на играта.&nbsp;Записвате файла със скрийншота във вид на изображение (jpg, gif, bmp, пр.) и наименовате файла във вид факултетен_номер_име_фамилия_игра_ниво на латиница. (Например: 15164032_ivan_ivanov_prm_nivo-2.jpg). Изигравате ниво 1 и ниво 2.</p>
+
+<table>
+  <tr>
+    <th>Екран от PRM 1</th>
+    <th>Екран от PRM 2</th>
+  </tr>
+  <tr>
+    <td><img src="prm1.jpg" height=200></td>
+    <td><img src="prm2.jpg" height=200></td>
+  </tr>
+</table>
+
+<p>4) Изпратете скрийншота, като попълните формуляра на следния линк:&nbsp;<a href="https://forms.gle/63zsHvia7sQBJGRP9" target="_blank">https://forms.gle/63zsHvia7sQBJGRP9</a>&nbsp;(ако пратите по някакъв друг начин, НЯМА ДА ВИ БЪДЕ ОТЧЕТЕН РЕЗУЛТАТ).</p>
+<p><p>Класация за ниво 1</p>
+
+<p><iframe height=300 width=900 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRmAP3Md7W2BnbrOJ-SLQkKbPw9XwvokYCkhgCbUitxW_jxjXA1z98zjYcec0OizFF5UK9UbWJgXa6P/pubhtml?gid=1306620836&amp;single=true&amp;widget=true&amp;headers=false"></iframe></p>
+<p>Класация за ниво 2</p>
+<iframe height=1000 width=900 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRmAP3Md7W2BnbrOJ-SLQkKbPw9XwvokYCkhgCbUitxW_jxjXA1z98zjYcec0OizFF5UK9UbWJgXa6P/pubhtml?gid=1028735444&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+
+
+</body>
+</html>

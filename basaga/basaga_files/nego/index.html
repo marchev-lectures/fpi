@@ -1,0 +1,81 @@
+<html lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>js-dos api</title>
+	<style type="text/css">.dosbox-container { width: 640px; height: 400px; }
+      .dosbox-container > .dosbox-overlay { background: url(nego.png); }
+	</style>
+</head>
+<body>
+<div id="dosbox"></div>
+
+<p><br />
+<button onclick="dosbox.requestFullScreen();">Make fullscreen</button><script type="text/javascript" src="js-dos-api.js"></script><script type="text/javascript">
+      var dosbox = new Dosbox({
+        id: "dosbox",
+        onload: function (dosbox) {
+          dosbox.run("NEGO.zip", "NEGO.BAT");
+        }, 
+        onrun: function (dosbox, app) {
+          console.log("App '" + app + "' is runned");
+        }
+      });
+    </script></p>
+
+<p></p>
+
+<p>Ако играете играта самостоятелно за наваксване на пропуснати точки от клас:</p>
+
+<p>1) Стартирате играта и се регистрирате с име на играч - вашето име.</p>
+
+<p>2) Изигравате играта и сваляте скрийншот, от който да се вижда името на играча (т.е. вашето име) и резултатът ви към края на играта.&nbsp;Записвате файла със скрийншота във вид на изображение (jpg, gif, bmp, пр.) и наименовате файла във вид факултетен_номер_име_фамилия_игра на латиница. (Например: 15164032_ivan_ivanov_nego.jpg).</p>
+
+<p> Примерен скрийншот: <br><img src="nego-final.jpg" height="300"></p>
+<p>3) Изпратете скрийншота и отчетете играта си на следния линк:&nbsp;<a href="https://forms.gle/jh39VWFwsjfXE8BM9">https://forms.gle/jh39VWFwsjfXE8BM9</a>&nbsp;(ако пратите по някакъв друг начин, НЯМА ДА ВИ БЪДЕ ОТЧЕТЕН РЕЗУЛТАТ).</p>
+
+<p><iframe height=1000 width=450 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTW-C6pGgjohOic7Amj_JQxXCzZh6zLqoEc2_MYzVP2d_-8_A2Rt3GJyBHwJaButMFrkN-c6adTotzU/pubhtml?gid=1019690199&amp;single=true&amp;widget=true&amp;headers=false"></iframe></p>
+</body>
+</html>
+
+
+
+<!--
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>js-dos api</title>
+    <script src="https://js-dos.com/6.22/current/js-dos.js"></script>
+  <style>
+    html, body, canvas, .dosbox-container {
+      width: 640px;
+      height: 400px;
+      margin: 10;
+      padding: 0;
+      overflow: visible;
+    }
+  </style>
+  </head>
+  <canvas id="jsdos"></canvas>
+  
+  <button style="position: absolute; left: 1em; top: 420px;" onclick="ci.fullscreen()">Fullscreen</button>
+  <script>
+    Dos(document.getElementById("jsdos"), {
+        wdosboxUrl: "https://js-dos.com/6.22/current/wdosbox.js",
+        cycles: 1000,
+        autolock: false,
+    }).ready(function (fs, main) {
+      fs.extract("NEGO.zip").then(function () {
+        main(["-c", "NEGO.BAT"]).then(function (ci) {
+            DosController.Qwerty(ci.getParentDiv(), ci.getKeyEventConsumer());
+//            DosController.Move(ci.getParentDiv(), ci.getKeyEventConsumer());
+            window.ci = ci;
+        });
+      });
+    });
+  </script>
+  
+ 
+  </body>
+</html>
+
+-->

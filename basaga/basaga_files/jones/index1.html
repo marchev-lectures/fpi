@@ -1,0 +1,53 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>js-dos 6.22, PRM</title>
+  <script src="https://js-dos.com/6.22/current/js-dos.js"></script>
+  <style>
+    html, body, canvas, .dosbox-container {
+      width: 640px;
+      height: 400px;
+      margin: 10;
+      padding: 0;
+      overflow: visible;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="jsdos"></canvas>
+  
+  <button style="position: absolute; left: 1em; top: 420px;" onclick="ci.fullscreen()">Fullscreen</button>
+  <script>
+    Dos(document.getElementById("jsdos"), {
+        wdosboxUrl: "https://js-dos.com/6.22/current/wdosbox.js",
+        cycles: 1000,
+        autolock: false,
+    }).ready(function (fs, main) {
+      fs.extract("prm.zip").then(function () {
+        main(["-c", "PRM.EXE"]).then(function (ci) {
+//            DosController.Qwerty(ci.getParentDiv(), ci.getKeyEventConsumer());
+//            DosController.Move(ci.getParentDiv(), ci.getKeyEventConsumer());
+            window.ci = ci;
+        });
+      });
+    });
+  </script>
+
+
+<p><a href="https://youtu.be/eSP_TurXyHk">Общи видео инструкции за PRM1</a></p>
+
+<p><a href="https://youtu.be/klVEjocqVPk">Допълнителни видео инструкции за PRM2</a></p>
+
+<p>Ако играете играта самостоятелно за наваксване на пропуснати точки от клас:</p>
+
+<p>1) Запознайте се с ръководството <a href="http://basaga.org/basaga_files/prm/2018-05-31PRM-rakovodstvo.pdf">тук...</a>&nbsp;</p>
+
+<p>2) Стартирате играта за съответното ниво&nbsp;и се регистрирате с име на играч - вашия факултетен номер.</p>
+
+<p>3) Изигравате играта и сваляте скрийншот, от който да се вижда името на играча (т.е. вашия факултетен номер) и резултатът ви към края на играта.&nbsp;Записвате файла със скрийншота във вид на изображение (jpg, gif, bmp, пр.) и наименовате файла във вид факултетен_номер_име_фамилия_игра_ниво на латиница. (Например: 15164032_ivan_ivanov_prm_nivo-2.jpg). Изигравате ниво 1 и ниво 2.</p>
+
+<p>4) Изпратете скрийншота на следния линк:&nbsp;<a href="http://bit.ly/predavane">http://bit.ly/predavane</a>&nbsp;(ако пратите по някакъв друг начин, НЯМА ДА ВИ БЪДЕ ОТЧЕТЕН РЕЗУЛТАТ).</p>
+</body>
+</html>

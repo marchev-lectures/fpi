@@ -1,0 +1,110 @@
+.content-panels ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 1.2em;
+    text-indent: -1.2em;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.content-panels li:before {
+    content: "►";
+    display: block;
+    float: left;
+    width: 1.2em;
+}
+
+.content-panels li{
+	margin-bottom: 5px;
+}
+
+.sim-tile{
+	height: 400px;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+.page-title{
+	margin-bottom: 40px;
+}
+
+.content-panels{
+	border: solid 1px #e5e5e5;
+	padding: 20px;
+	padding-top: 0px;
+	margin-bottom: 30px;
+}
+
+.content-panels h3{
+	background-color: #e5e5e5;
+	padding: 20px;
+	margin-left: -20px;
+	margin-right: -20px;
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
+
+.over {
+	height: 100%;
+    overflow-y: auto; 
+    overflow: hidden;
+}
+
+.img-wrap{
+	margin-top: 30px;
+	margin-bottom: 25px;
+}
+
+.img-wrap > p{
+	margin-top: 10px;
+}
+
+.img-wrap > img{
+	max-width: 100%;
+	height: auto;
+}
+
+body{
+	background-image: url("../images/bg.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+}
+
+.hybrid{
+	background-image: url("../images/ticker-bg.jpg");
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-attachment: fixed;
+}
+
+.fixing{
+	background-image: url("../images/bullcow.jpg");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+}
+
+.order-driven{
+	background-image: url("../images/bull.jpg");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+}
+
+.bonds{
+	background-image: url("../images/bonds.jpg");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+}
+
+.opaque {
+	background: url('../images/bg50.png');
+}
+
+.hybrid-game{
+	background-image: url("../images/hybrid-game.jpg");
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-attachment: fixed;

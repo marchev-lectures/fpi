@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>js-dos 6.22, PRM</title>
+    <script src="https://js-dos.com/6.22/current/js-dos.js"></script>
+    <script>
+        function generate(max, thecount) {
+            var r = [];
+            var currsum = 0;
+            for(var i=0; i<thecount-1; i++) {
+                r[i] = randombetween(1, max-(thecount-i-1)-currsum);
+                currsum += r[i];
+                }
+            r[thecount-1] = max - currsum;
+            document.getElementById("myNumber").innerHTML = r;
+        }
+    </script>
+    <style>
+        #myNumber{
+            font-size:100px;
+            text-align:center;
+            margin:50px auto;
+            font-family:Arial, sans-serif;
+            }
+    </style>
+    <style>
+        html, body, canvas, .dosbox-container {
+            width: 640px;
+            height: 400px;
+            margin: 10;
+            padding: 0;
+            overflow: visible;
+        }
+    </style>
+</head>
+
+<body onload="generate(37, 6);">
+
+    <div id="myNumber"></div>
+    <canvas id="jsdos"></canvas>
+  
+    <button style="position: absolute; left: 1em; top: 420px;" onclick="ci.fullscreen()">Fullscreen</button>
+    <script>
+        Dos(document.getElementById("jsdos"), {
+            wdosboxUrl: "https://js-dos.com/6.22/current/wdosbox.js",
+            cycles: 4000,
+            autolock: false,
+        }).ready(function (fs, main) {
+        fs.extract("GAME.zip").then(function () {
+            main(["-c", "JONES.BAT"]).then(function (ci) {
+//            DosController.Qwerty(ci.getParentDiv(), ci.getKeyEventConsumer());
+//            DosController.Move(ci.getParentDiv(), ci.getKeyEventConsumer());
+            window.ci = ci;
+        });
+      });
+    });
+    </script>
+
+<p>Алтернативен линк за изиграване на играта (след което спазвате инструкциите по-долу):<br>
+<a href="https://jonesinthefastlane.com/">https://jonesinthefastlane.com/</a></p>
+
+<p>Ако играете играта самостоятелно за наваксване на пропуснати точки от клас:</p>
+
+<p>1) Запознайте се с ръководството <a href="Jones_Quick_Reference_bg.pdf" target="_blank">тук...</a>&nbsp;</p>
+
+<p>2) Стартирате играта с възможно най-ниската сложност на целите - ако искате да играете с по-сложни цели, имате възможност да го направите по ваш избор</p>
+
+<p>3) Изигравате играта и сваляте скрийншот (може да стане с дясно копче на мишката върху играта и Save image as...), от който да се вижда че сте "Winner" и се вижда в коя седмица се е случило. Записвате файла със скрийншота във вид на изображение (jpg, gif, bmp, пр.) и наименовате файла във вид факултетен_номер_име_фамилия_игра_ниво на латиница. (Например: 15164032_ivan_ivanov_jones.jpg). </p>
+<p> Примерен скрийншот: <br><img src="jones_final.png" height="300"></p>
+
+<p>4) Изпратете скрийншота, като попълните формуляра на следния линк:&nbsp;<a href="https://forms.gle/r8fWSkugKQ6zNoku5"target="_blank">https://forms.gle/r8fWSkugKQ6zNoku5</a>&nbsp;(ако пратите по някакъв друг начин, НЯМА ДА ВИ БЪДЕ ОТЧЕТЕН РЕЗУЛТАТ).</p>
+<p></p>
+
+<iframe height=1000 width=450 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTW-C6pGgjohOic7Amj_JQxXCzZh6zLqoEc2_MYzVP2d_-8_A2Rt3GJyBHwJaButMFrkN-c6adTotzU/pubhtml?gid=2008284262&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+
+
+</body>
+</html>
